@@ -31,10 +31,7 @@ const requireAuth = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         }
     }
     else {
-        res.status(401).json({
-            code: 401,
-            message: "Unauthorized: No token provided"
-        });
+        next();
     }
     next();
 });

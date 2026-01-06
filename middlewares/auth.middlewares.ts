@@ -19,10 +19,11 @@ export const requireAuth = async (req: Request, res: Response, next: NextFunctio
             });
         }
     }else{
-        res.status(401).json({
-            code: 401,
-            message: "Unauthorized: No token provided"
-        });
+        next();
+        // res.status(401).json({
+        //     code: 401,
+        //     message: "Unauthorized: No token provided"
+        // });
     }
 
     next();
